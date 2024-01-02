@@ -8,3 +8,29 @@
 
 
 // Write your code here
+
+let displayResultCard = (studentName, subjects, scores) => {
+  const totalMarks = scores.reduce((sum, currentValue) => sum + currentValue);
+  const totalSubjects = scores.length;
+  const percentage = (totalMarks / totalSubjects).toFixed(2);
+  console.log(`Student Name: ${studentName}`);
+  console.log(`Subjects: ${subjects.join(', ')}`);
+  console.log(`Percentage: ${percentage}%`);
+  console.log('------------------------');
+};
+
+for (let id = 1; id <= 50; id = id + 1) {
+  const studentName = `Student_${id}`;
+  const subjects = ['Grammer', 'Accounts'];
+  const scores = [Math.floor(Math.random() * 40) + 50, Math.floor(Math.random() * 45) + 50];
+  displayResultCard(studentName, subjects, scores);
+}
+
+for (let id = 51; id <= 100; id = id + 1) {
+  const studentName = `Student_${id}`;
+  const subjects = ['Grammer', 'Accounts'];
+  const scores = [Math.floor(Math.random() * 40) + 50, Math.floor(Math.random() * 50) + 50];
+  displayResultCard(studentName, subjects, scores);
+}
+
+

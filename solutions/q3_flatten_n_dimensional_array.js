@@ -1,7 +1,11 @@
 /* Write a Program to Flatten a given n-dimensional array */
 
-const flatten = () => {
-	// Write your code here
+let flatten = (arr) => {
+  if (!Array.isArray(arr)) { return null; }
+
+  return arr.reduce((accumulation, oneItem) => {
+    return accumulation.concat(Array.isArray(oneItem) ? flatten(oneItem) : oneItem);
+  }, []);
 };
 
 /* For example,
